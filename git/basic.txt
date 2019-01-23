@@ -1,0 +1,9 @@
+First pull a repo and then make ur own project out of it
+1 – create a repo in github.com
+Make a new repo on Github called SecondProject.
+1. Locally clone your MyfirstProject, either from disk or from Github. Then use git pull on the branches you need to move to the second repo.
+2. git remote set-url origin git@github.com:yourname/SecondProject.git
+3. Push it.
+
+
+ 

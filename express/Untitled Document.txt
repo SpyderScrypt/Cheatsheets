@@ -1,0 +1,30 @@
+//Installation
+1)Download mongodb form site
+2)extract file in home and rename it to mongo
+3)create a new folder in home mongodata
+
+//Running
+1)open mongo folder in terminal and cd to bin		cd bin
+2)run mongod by 		./mongod --dbpath ~/mongodata
+3)open another terminal in same mongo and cd to bin	cd bin
+4)command- 	./mongo
+eg commands-
+5)> db.Todos.insert({text: 'Akash is great'})
+6)> db.Todos.find()
+
+//Install robomongo and using db
+1)download robomongo and extract it in home and give name mongorobo
+2)to run robo mongo click on robo3T in bin of mongorobo
+3)Create a connection by clicking create and give name eg -Local Mongo Database then click on save
+4)double click database(Local Mongo Database to run)
+5)Open test and see collection Todos
+
+//Running node with mongodb
+1)install mongodb driver 	-	npm install mongodb@2.2.5
+2)const MongoClient = require('mongodb').MongoClient;
+3)https://github.com/mongodb/node-mongodb-native	- use reference
+
+
+
+//Running mongo service another way
+service mongod start

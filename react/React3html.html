@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)https://www.helixtech.org.uk/cheat-sheet/buildsheet.php -->
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cheat Sheet Generator</title>
+<style>
+body {
+	font-family:Calibri,Helvetica;
+}
+h1,h2 {
+	background-color:#6b7eb7;
+	color:#ffffff;
+	font-weight:bold;
+	margin-top:0px;
+	padding:2px;
+	padding-left:4px;
+}
+h2 {
+	margin-bottom:0px;
+	font-size:1.2em;
+}
+.box {
+	margin:0px 0px 10px 10px
+}
+.l {
+	float:left;
+}
+.r {
+	float:right;
+}
+.single {
+	width:48%;
+}
+.double {
+	width:99%;
+}
+.codeblock {
+	background-color:#F0F0F0;
+	border:1px solid #B0B0B0;
+	margin:4px;
+	padding:4px;
+}
+.error{
+	background:#C00000;
+	color:#FFFFFF;
+	font-size:1.2em;
+	font-weight:bold;
+	text-align:center;
+	padding:4px 20px;
+	margin-bottom:10px;
+	width:500px;
+}
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.javascript.codeblock  {font-family:Consolas,Lucida Console,monospace;}
+.javascript.codeblock .imp {font-weight: bold; color: red;}
+.javascript.codeblock .kw1 {color: #000066; font-weight: bold;}
+.javascript.codeblock .kw2 {color: #003366; font-weight: bold;}
+.javascript.codeblock .kw3 {color: #000066;}
+.javascript.codeblock .co1 {color: #006600; font-style: italic;}
+.javascript.codeblock .co2 {color: #009966; font-style: italic;}
+.javascript.codeblock .coMULTI {color: #006600; font-style: italic;}
+.javascript.codeblock .es0 {color: #000099; font-weight: bold;}
+.javascript.codeblock .br0 {color: #009900;}
+.javascript.codeblock .sy0 {color: #339933;}
+.javascript.codeblock .st0 {color: #3366CC;}
+.javascript.codeblock .nu0 {color: #CC0000;}
+.javascript.codeblock .me1 {color: #660066;}
+.javascript.codeblock span.xtra { display:block; }
+</style>
+</head>
+<body>
+<h1>React Basics 3</h1>
+			<div class="box single l">
+						<h2>Event Handling using arrow function</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> Trial <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; &nbsp; logHandler <span class="sy0">=</span> <span class="br0">(</span><span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">(</span><span class="st0">'Event triggered'</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+&nbsp; &nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div onClick<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">logHandler</span><span class="br0">}</span><span class="sy0">&gt;</span>Click me to log<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span></div>		</div>
+				<div class="box single r">
+						<h2>With values passed</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> Trial <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; &nbsp; logHandler <span class="sy0">=</span> <span class="br0">(</span><span class="kw3">name</span><span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">(</span><span class="st0">'Event triggered'</span><span class="sy0">,</span><span class="kw3">name</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+&nbsp; &nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div onClick<span class="sy0">=</span><span class="br0">{</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><span class="kw1">this</span>.<span class="me1">logHandler</span><span class="br0">(</span><span class="st0">'Akash'</span><span class="br0">)</span><span class="br0">}</span><span class="br0">}</span><span class="sy0">&gt;</span>Click me to log<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span></div>		</div>
+				<div class="box double l">
+						<h2>With arrow,parameters and Bind</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> Trial <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; &nbsp; logHandler <span class="sy0">=</span> <span class="br0">(</span><span class="kw3">name</span><span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">(</span><span class="st0">'Event triggered'</span><span class="sy0">,</span><span class="kw3">name</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+&nbsp; &nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div onClick<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">logHandler</span>.<span class="me1">bind</span><span class="br0">(</span><span class="kw1">this</span><span class="sy0">,</span><span class="st0">'Akash'</span><span class="br0">)</span><span class="br0">}</span><span class="sy0">&gt;</span>Click me to log<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><span class="br0">}</span><span class="br0">}</span><br>
+&nbsp;</div>		</div>
+				<div class="box single l">
+						<h2>With normal method and bind</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> Trial <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; &nbsp; logHandler<span class="br0">(</span><span class="kw3">name</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">(</span><span class="st0">'Event triggered'</span><span class="sy0">,</span><span class="kw3">name</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+&nbsp; &nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div onClick<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">logHandler</span>.<span class="me1">bind</span><span class="br0">(</span><span class="kw1">this</span><span class="sy0">,</span><span class="st0">'Akash'</span><span class="br0">)</span><span class="br0">}</span><span class="sy0">&gt;</span>Click me to log<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><span class="br0">}</span><span class="br0">}</span></div>		</div>
+				<div class="box single r">
+						<h2>With normal method and arrow function in event</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> Trial <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; &nbsp; logHandler<span class="br0">(</span><span class="kw3">name</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">(</span><span class="st0">'Event triggered'</span><span class="sy0">,</span><span class="kw3">name</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <br>
+&nbsp; &nbsp; <span class="br0">}</span><br>
+&nbsp; &nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div onClick<span class="sy0">=</span><span class="br0">{</span><span class="br0">(</span><span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="kw1">this</span>.<span class="me1">logHandler</span><span class="br0">(</span><span class="st0">'Akash'</span><span class="br0">)</span><span class="br0">}</span><span class="sy0">&gt;</span>Click me to log<span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><span class="br0">}</span><span class="br0">}</span></div>		</div>
+				<div class="box double l">
+						<h2>Note that .bind() is more fast than arrow inside event.</h2>
+					</div>
+		
+</body></html>

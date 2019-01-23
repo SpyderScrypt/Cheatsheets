@@ -1,0 +1,359 @@
+1) Create react app with init
+react-native init basics
+
+2) Start application
+react-native run-android
+
+3)Jsx extension cannot be used with react native
+
+4) FlatList is more opti,ized than scrollview
+
+5) Importing image in react native
+Normal import using import statement - 
+import placeImage from "./src/assets/img.jpg";
+
+here while using it inside image component , react native preserves actual height and width of that image, thoug we can override it in styles, and also that by default mode is cover
+eg - 
+      <Image source={props.placeImage} style={styles.placeImage} />
+
+
+Using Network Image
+it takes object with uri property which contains address url of image . Note that in this case it is necessary to give height and width of image
+
+      <Image
+        source={{
+          uri:
+            "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIS+xvou7DS+Uz9jfRULkBP2/Z"
+        }}
+        style={styles.placeImage}
+      />
+
+6) Link external package automatically
+react-native link  react-native-fs
+
+
+7) Using react native debugger 
+first import compose
+import { createStore, combineReducers, compose } from "redux";
+
+then
+
+let composeEnhancers = compose;
+
+if (__DEV__) {
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+}
+
+then inside create store
+
+const store = createStore(allReducers, composeEnhancers());
+
+
+
+
+6.1) Use stylesheet.create when there are no dynamic styles and use normal const={} style when we get dynamic styles from porps or other
+
+
+
+
+
+7) Installing 3rd party modules
+eg - react-native-vector-icons
+
+first install that package - 
+npm install react-native-vector-icons --save
+
+
+
+
+8) Navigation in react
+Two options - 
+1) react navigation
+2) react native navigation
+
+
+React native navigation, install with given steps in docs
+then - 
+
+For navigation using single screen app - 
+
+In App.js
+import { Navigation } from "react-native-navigation";
+
+import AuthScreen from "./src/screens/Auth/Auth";
+
+//Register Screens
+Navigation.registerComponent("awesome-places.AuthScreen", () => AuthScreen);
+
+//Start a App
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: "awesome-places.AuthScreen",
+    title: "Login"
+  }
+});
+
+
+then create a new folder in src called screens and create a component called Auth and in it - 
+
+import React, { Component } from "react";
+import { View, Text } from "react-native";
+
+class AuthScreen extends Component {
+  render() {
+    return (
+      <View>
+        <Text> Auth Screen</Text>
+      </View>
+    );
+  }
+}
+
+export default AuthScreen;
+
+
+
+
+
+
+______________________________________________________________
+
+9) React navigation
+App.js - 
+import React from "react";
+import { View, Text } from "react-native";
+import { createStackNavigator } from "react-navigation";
+import LoginScreen from "./src//components/LoginScreen";
+import HomeScreen from "./src/components/HomeScreen";
+
+export default class App extends React.Component {
+  render() {
+    return <AppStackNavigator />;
+  }
+}
+
+//Create Navigation Here
+const AppStackNavigator = createStackNavigator(
+  {
+    Login: LoginScreen,
+    Home: HomeScreen
+  },
+  {
+    initialRouteName: "Login"
+  }
+);
+
+
+Remember to import and export child component withNavigation to child component
+
+import { withNavigation } from "react-navigation";
+export default withNavigation(LinksComponent);
+
+To navigate on diff page with putton
+        <Button
+          title="Goto Home Screen"
+          onPress={() => this.props.navigation.navigate("Home")}
+        />
+
+
+to create goback button - 
+        <Button
+          title="Go Back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+
+
+To disable header, inside that component inside class and above render
+  static navigationOptions = {
+    header: null
+  };
+
+
+
+
+________________________________________________________________
+
+
+
+
+				Styles
+1) Import StyleSheet and use it to give styles
+2) dont use px or rem and when giving percentage give it as a string
+3)Reusable component styling
+give style in reusable component and then in pass {...props} and in parent component we can pass extra props 
+eg reusable component
+<TextInput style={[styles.input,props.style]} {...props} />
+
+4) To style multiple text, we trap it inside another text element as we cannot give style related to font to view
+
+5)ImageBackground component is used to give background image
+
+6) If we add wrapping view to our already styled elements and everything mess up then apply width 100% and align items center to wrapping div
+
+7) Different styles for different platform
+there are 2 ways to achieve that
+first is to have diff entyrpoint files like index.ios.js and index.android.js
+second is using platform api to detect on which platform the code is running.
+
+
+8) For responsive design that is to make work our app in both poitrait and landscape mode , we use dimensions api
+
+to style for both modes, create a state called view and check in there which view mode it is using get dimensions 
+then create diff style for diff modes and then apply to components styles based on view mode in state
+
+
+
+________________________________________________________________
+
+					Maps in react native
+while installing note that
+   implementation 'com.google.android.gms:play-services-base:11.0.4'
+   implementation 'com.google.android.gms:play-services-maps:11.0.4'
+
+
+
+________________________________________________________________
+
+			Redux with RN and navigation
+
+make sure that there is no extra view here
+     <Provider store={store}>
+        <AppStackNavigator />
+      </Provider>
+
+
+eg - 
+app.js
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, { Component } from "react";
+import FirstScreen from "./screens/FirstScreen";
+import SecondScreen from "./screens/SecondScreen";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button
+} from "react-native";
+
+import { createStackNavigator } from "react-navigation";
+import { createBottomTabNavigator } from "react-navigation";
+
+import { applyMiddleware, createStore } from "redux";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import rootReducer from "./reducers/rootReducer";
+
+const store = createStore(rootReducer, {}, composeWithDevTools());
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <AppStackNavigator />
+      </Provider>
+    );
+  }
+}
+
+//Create Navigation Here
+const AppStackNavigator = createBottomTabNavigator(
+  {
+    Input: FirstScreen,
+    Details: SecondScreen
+  },
+  {
+    initialRouteName: "Input",
+    tabBarPosition: "bottom",
+    swipeEnabled: true,
+    animationEnabled: true,
+    activeTintColor: "red",
+    inactiveTintColor: "red",
+    tabBarOptions: {
+      style: {
+        backgroundColor: "#841584",
+        borderTopWidth: 0,
+        paddingBottom: 16
+      },
+      labelStyle: {
+        color: "white",
+        fontWeight: "bold",
+        fontSize: 13
+      }
+    }
+  }
+);
+
+
+
+
+________________________________________________________________
+
+
+Create a circular view
+    const style = {
+        width: size,
+        height: size,
+        borderRadius: size / 2,
+        backgroundColor,
+    }
+
+
+
+________________________________________________________________
+
+
+
+				Flexbox in RN
+1)  A component must have both a non-zero width and height in order to render anythingonthescreen.Ifthewidthis0,thennothingwillrenderonthescreen,nomatterhowlarge the height is.
+
+
+2) flex: 1,
+here  The flex value is a number that represents the ratio of space that a component should take up, relative to its siblings. 
+
+• with a flex of 1, the component will expand to fill its parent entirely 
+• with a flex value of 0, the component will shrink to the minimum space possible (just large enough for the component’s children to be visible, if it has any)
+
+________________________________________________________________
+
+1)Touchableopacity can have only one child element
+
+
+
+________________________________________________________________
+
+
+Release Build
+1- goto documents 
+ keytool -genkey -v -keystore watermeter.keystore -alias watermeter -keyalg RSA -keysi
+ze 2048 -validity 10000
+
+2 - 
+release build
+cd android
+.\gradlew assembleRelease
+
+3 - copy unsigned app from
+android-app-build-op-apk-release
+
+
+_________________________________________________________________
+Making image responsive inside view with respect to other components and to avoid cutting of other components
+give image width , height as well as flex:1 
+
+
+_________________________________________________________________
+To avoid change of layout due to keyboard , use fixed height instead of height in percent
+width can be in percent
+
+_________________________________________________________________
+
+button,accordian with icon,Icon,

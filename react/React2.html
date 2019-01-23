@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)https://www.helixtech.org.uk/cheat-sheet/buildsheet.php -->
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cheat Sheet Generator</title>
+<style>
+body {
+	font-family:Calibri,Helvetica;
+}
+h1,h2 {
+	background-color:#3778af;
+	color:#ffffff;
+	font-weight:bold;
+	margin-top:0px;
+	padding:2px;
+	padding-left:4px;
+}
+h2 {
+	margin-bottom:0px;
+	font-size:1.2em;
+}
+.box {
+	margin:0px 0px 10px 10px
+}
+.l {
+	float:left;
+}
+.r {
+	float:right;
+}
+.single {
+	width:48%;
+}
+.double {
+	width:99%;
+}
+.codeblock {
+	background-color:#F0F0F0;
+	border:1px solid #B0B0B0;
+	margin:4px;
+	padding:4px;
+}
+.error{
+	background:#C00000;
+	color:#FFFFFF;
+	font-size:1.2em;
+	font-weight:bold;
+	text-align:center;
+	padding:4px 20px;
+	margin-bottom:10px;
+	width:500px;
+}
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.javascript.codeblock  {font-family:Consolas,Lucida Console,monospace;}
+.javascript.codeblock .imp {font-weight: bold; color: red;}
+.javascript.codeblock .kw1 {color: #000066; font-weight: bold;}
+.javascript.codeblock .kw2 {color: #003366; font-weight: bold;}
+.javascript.codeblock .kw3 {color: #000066;}
+.javascript.codeblock .co1 {color: #006600; font-style: italic;}
+.javascript.codeblock .co2 {color: #009966; font-style: italic;}
+.javascript.codeblock .coMULTI {color: #006600; font-style: italic;}
+.javascript.codeblock .es0 {color: #000099; font-weight: bold;}
+.javascript.codeblock .br0 {color: #009900;}
+.javascript.codeblock .sy0 {color: #339933;}
+.javascript.codeblock .st0 {color: #3366CC;}
+.javascript.codeblock .nu0 {color: #CC0000;}
+.javascript.codeblock .me1 {color: #660066;}
+.javascript.codeblock span.xtra { display:block; }
+</style>
+</head>
+<body>
+<h1>React Basics 1</h1>
+			<div class="box double l">
+						<h2>Conditional Rendering with &amp;&amp;</h2>
+			<div class="javascript codeblock"><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">state</span>.<span class="me1">toggle</span> <span class="sy0">&amp;&amp;</span> <br>
+&nbsp; <span class="sy0">&lt;</span>p<span class="sy0">&gt;</span>This should show and hide<span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="co1">//This will render p tag if this.state.toggle is true otherwise not</span></div>		</div>
+				<div class="box double l">
+						<h2>Refs in DOM</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> App <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; submit <span class="sy0">=</span> <span class="br0">(</span><span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; console.<span class="me1">log</span><span class="br0">(</span><span class="kw1">this</span>.<span class="me1">text</span>.<span class="me1">value</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; &nbsp; <br>
+&nbsp; <span class="br0">}</span><br>
+<br>
+&nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div className<span class="sy0">=</span><span class="st0">"App"</span><span class="sy0">&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">"text"</span> ref<span class="sy0">=</span><span class="br0">{</span><span class="br0">(</span>input<span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="kw1">this</span>.<span class="me1">text</span> <span class="sy0">=</span> input<span class="br0">}</span> <span class="sy0">/&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>button onClick<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">submit</span><span class="br0">}</span><span class="sy0">&gt;</span>Show Value<span class="sy0">&lt;/</span>button<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="co1">//Notice that inside input tag we give prop ref and give arrow function bu passing value of any var then we create a variable inside arrow function using this.text = input. then we handle that this.text var in onclick event method.</span><br>
+<br>
+<span class="co1">//Using refs is uncontrolled, we cannot check to see if ip given is in lowerspaces or without spaces</span></div>		</div>
+				<div class="box double l">
+						<h2>Controlled ip and two way binding</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> App <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; state <span class="sy0">=</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; input<span class="sy0">:</span><span class="st0">"Hello"</span><span class="sy0">,</span><br>
+&nbsp; <span class="br0">}</span><br>
+<br>
+&nbsp; updateInput <span class="sy0">=</span> <span class="br0">(</span>event<span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">setState</span><span class="br0">(</span><span class="br0">{</span><br>
+&nbsp; &nbsp; &nbsp; input<span class="sy0">:</span> event.<span class="me1">target</span>.<span class="me1">value</span><span class="sy0">,</span><br>
+&nbsp; &nbsp; <span class="br0">}</span><span class="br0">)</span><br>
+&nbsp; <span class="br0">}</span><br>
+<br>
+&nbsp; render<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>div className<span class="sy0">=</span><span class="st0">"App"</span><span class="sy0">&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>h3<span class="sy0">&gt;</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">state</span>.<span class="me1">input</span><span class="br0">}</span><span class="sy0">&lt;/</span>h3<span class="sy0">&gt;</span><br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>input type<span class="sy0">=</span><span class="st0">"text"</span> onChange<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">updateInput</span><span class="br0">}</span> value<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">state</span>.<span class="me1">input</span><span class="br0">}</span><span class="sy0">/&gt;</span><br>
+<br>
+<br>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>button onClick<span class="sy0">=</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">submit</span><span class="br0">}</span><span class="sy0">&gt;</span>Show Value<span class="sy0">&lt;/</span>button<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; <span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span><br>
+<br>
+<br>
+<span class="co1">//Flow of program is first when page is loaded, value will be hello as we have given input value as hello by linking it to state, Then when we change ip , onchange method is called which again set the state to current event.target.value , as we change state using set state, value prop inside input will point to new state and get updated. Note that if we hardcode value of ip as string "Hello" , input field will not change as it always is hello</span><br>
+<span class="co1">//Two way binding is simply printing new input value using h3 tag</span><br>
+<span class="co1">//This is controlled ip as we can check in updateInput method if ip contains no spaces using </span><br>
+&nbsp; &nbsp; &nbsp; input<span class="sy0">:</span> event.<span class="me1">target</span>.<span class="me1">value</span>.<span class="me1">trim</span><span class="br0">(</span><span class="br0">)</span><br>
+&nbsp;</div>		</div>
+		
+</body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)https://www.helixtech.org.uk/cheat-sheet/buildsheet.php -->
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cheat Sheet Generator</title>
+<style>
+body {
+	font-family:Calibri,Helvetica;
+}
+h1,h2 {
+	background-color:#b31309;
+	color:#ffffff;
+	font-weight:bold;
+	margin-top:0px;
+	padding:2px;
+	padding-left:4px;
+}
+h2 {
+	margin-bottom:0px;
+	font-size:1.2em;
+}
+.box {
+	margin:0px 0px 10px 10px
+}
+.l {
+	float:left;
+}
+.r {
+	float:right;
+}
+.single {
+	width:48%;
+}
+.double {
+	width:99%;
+}
+.codeblock {
+	background-color:#F0F0F0;
+	border:1px solid #B0B0B0;
+	margin:4px;
+	padding:4px;
+}
+.error{
+	background:#C00000;
+	color:#FFFFFF;
+	font-size:1.2em;
+	font-weight:bold;
+	text-align:center;
+	padding:4px 20px;
+	margin-bottom:10px;
+	width:500px;
+}
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.javascript.codeblock  {font-family:Consolas,Lucida Console,monospace;}
+.javascript.codeblock .imp {font-weight: bold; color: red;}
+.javascript.codeblock .kw1 {color: #000066; font-weight: bold;}
+.javascript.codeblock .kw2 {color: #003366; font-weight: bold;}
+.javascript.codeblock .kw3 {color: #000066;}
+.javascript.codeblock .co1 {color: #006600; font-style: italic;}
+.javascript.codeblock .co2 {color: #009966; font-style: italic;}
+.javascript.codeblock .coMULTI {color: #006600; font-style: italic;}
+.javascript.codeblock .es0 {color: #000099; font-weight: bold;}
+.javascript.codeblock .br0 {color: #009900;}
+.javascript.codeblock .sy0 {color: #339933;}
+.javascript.codeblock .st0 {color: #3366CC;}
+.javascript.codeblock .nu0 {color: #CC0000;}
+.javascript.codeblock .me1 {color: #660066;}
+.javascript.codeblock span.xtra { display:block; }
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.c.codeblock  {font-family:Consolas,Lucida Console,monospace;}
+.c.codeblock .imp {font-weight: bold; color: red;}
+.c.codeblock .kw1 {color: #b1b100;}
+.c.codeblock .kw2 {color: #000000; font-weight: bold;}
+.c.codeblock .kw3 {color: #000066;}
+.c.codeblock .kw4 {color: #993333;}
+.c.codeblock .co1 {color: #666666; font-style: italic;}
+.c.codeblock .co2 {color: #339933;}
+.c.codeblock .coMULTI {color: #808080; font-style: italic;}
+.c.codeblock .es0 {color: #000099; font-weight: bold;}
+.c.codeblock .es1 {color: #000099; font-weight: bold;}
+.c.codeblock .es2 {color: #660099; font-weight: bold;}
+.c.codeblock .es3 {color: #660099; font-weight: bold;}
+.c.codeblock .es4 {color: #660099; font-weight: bold;}
+.c.codeblock .es5 {color: #006699; font-weight: bold;}
+.c.codeblock .br0 {color: #009900;}
+.c.codeblock .sy0 {color: #339933;}
+.c.codeblock .st0 {color: #ff0000;}
+.c.codeblock .nu0 {color: #0000dd;}
+.c.codeblock .nu6 {color: #208080;}
+.c.codeblock .nu8 {color: #208080;}
+.c.codeblock .nu12 {color: #208080;}
+.c.codeblock .nu16 {color:#800080;}
+.c.codeblock .nu17 {color:#800080;}
+.c.codeblock .nu18 {color:#800080;}
+.c.codeblock .nu19 {color:#800080;}
+.c.codeblock .me1 {color: #202020;}
+.c.codeblock .me2 {color: #202020;}
+.c.codeblock span.xtra { display:block; }
+</style>
+</head>
+<body>
+<h1>React Basics 1</h1>
+			<div class="box single l">
+						<h2>import syntax</h2>
+			<div class="javascript codeblock"><span class="kw2">import</span> React<span class="sy0">,</span> <span class="br0">{</span> Component <span class="br0">}</span> from <span class="st0">'react'</span><span class="sy0">;</span></div>		</div>
+				<div class="box single r">
+						<h2>export Syntax</h2>
+			<div class="javascript codeblock">Code Sampleexport <span class="kw2">default</span> App<span class="sy0">;</span></div>		</div>
+				<div class="box double l">
+						<h2>Components Types</h2>
+					</div>
+				<div class="box single l">
+						<h2>Class Based Component</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> App <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+&nbsp; render <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <span class="br0">(</span><br>
+&nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; Hello <span class="br0">{</span><span class="kw1">this</span>.<span class="me1">props</span>.<span class="kw3">name</span><span class="br0">}</span><br>
+&nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; <span class="br0">)</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span><br>
+<span class="co1">//Note that when returning multiple html elements,wrap it inside div and insite brackets of return st</span></div>		</div>
+				<div class="box single r">
+						<h2>Functional components</h2>
+			<div class="javascript codeblock"><span class="kw2">const</span> Header <span class="sy0">=</span><span class="br0">(</span>props<span class="br0">)</span> <span class="sy0">=&gt;</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span><span class="br0">(</span><br>
+&nbsp; &nbsp; <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; Hello <span class="br0">{</span><span class="kw1">this</span>.<span class="me1">props</span>.<span class="kw3">name</span><span class="br0">}</span><br>
+&nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; <span class="br0">)</span><br>
+<span class="br0">}</span><br>
+<span class="co1">//props are passed as the first parameter to a function.</span></div>		</div>
+				<div class="box double l">
+						<h2>Using Constructor inside react</h2>
+			<div class="javascript codeblock"><span class="kw2">class</span> App <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; constructor<span class="br0">(</span>props<span class="br0">)</span><br>
+&nbsp; <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw2">super</span><span class="br0">(</span>props<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<br>
+<span class="co1">//Rest of the code</span></div>		</div>
+				<div class="box double l">
+						<h2>States</h2>
+			<div class="javascript codeblock"><span class="co1">//State Declaration</span><br>
+<span class="kw2">class</span> App <span class="kw2">extends</span> Component <span class="br0">{</span><br>
+<br>
+&nbsp; state <span class="sy0">=</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; toggle<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span><br>
+&nbsp; &nbsp; <span class="kw3">name</span><span class="sy0">:</span> <span class="st0">'Akash'</span><span class="sy0">,</span><br>
+&nbsp; <span class="br0">}</span><br>
+<br>
+<span class="co1">//Using state</span><br>
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">state</span>.<span class="kw3">name</span><span class="br0">}</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span></div>		</div>
+				<div class="box double l">
+						<h2>Props</h2>
+			<div class="javascript codeblock"><span class="co1">//First pass props to child component</span><br>
+<span class="sy0">&lt;</span>Video <span class="kw3">name</span><span class="sy0">=</span><span class="st0">"Akash"</span> <span class="sy0">/&gt;</span><br>
+<br>
+<span class="co1">//recieve props in child component as</span><br>
+render <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; <span class="sy0">&lt;</span>p<span class="sy0">&gt;</span><span class="br0">{</span><span class="kw1">this</span>.<span class="me1">props</span>.<span class="kw3">name</span><span class="br0">}</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br>
+<span class="br0">}</span><br>
+<span class="co1">//Note that props is an array which contains all the props passed for that component</span><br>
+&nbsp;</div>		</div>
+				<div class="box double l">
+						<h2>Children</h2>
+			<div class="c codeblock"><span class="sy0">&lt;</span>AlertBox<span class="sy0">&gt;</span><br>
+&nbsp; <span class="sy0">&lt;</span>h1<span class="sy0">&gt;</span>You have pending notifications<span class="sy0">&lt;/</span>h1<span class="sy0">&gt;</span><br>
+<span class="sy0">&lt;/</span>AlertBox<span class="sy0">&gt;</span><br>
+&nbsp;<br>
+class AlertBox extends Component <span class="br0">{</span><br>
+&nbsp; render <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="kw1">return</span> <span class="sy0">&lt;</span>div<span class="sy0">&gt;</span><br>
+&nbsp; &nbsp; &nbsp; <span class="br0">{</span>this.<span class="me1">props</span>.<span class="me1">children</span><span class="br0">}</span><br>
+&nbsp; &nbsp; <span class="sy0">&lt;/</span>div<span class="sy0">&gt;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span><br>
+<span class="co1">//Children are passed as the children property.</span><br>
+&nbsp;</div>		</div>
+		
+</body></html>
