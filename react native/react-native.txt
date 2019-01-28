@@ -357,3 +357,39 @@ width can be in percent
 _________________________________________________________________
 
 button,accordian with icon,Icon,
+
+
+
+
+
+----------------------------------------------------------------
+
+Error - Skipping device 'MNSCY5LJF6YTBUMZ' (MNSCY5LJF6YTBUMZ): Device is null.
+
+
+I've seen this error a few times when adb hasn't been connected with correct permissions.
+
+On the terminal try
+~/Android/Sdk/platform-tools> ./adb devices
+
+if it returns
+<deviceIdentifier> no permissions
+
+then you need to restart adb with correct perms
+~/Android/Sdk/platform-tools$> ./adb kill-server
+~/Android/Sdk/platform-tools$> sudo ./adb devices
+
+if that worked then you'll get
+List of devices attached
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+<deviceIdentifier>  device
+
+No more Sdk version resolution issues in Android Studio after that.
+
+
+
+
+__________________________________________________________________________________
+
+
