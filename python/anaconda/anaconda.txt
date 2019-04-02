@@ -1,0 +1,15 @@
+1 -  create a virtual env 
+conda create -n trialenv flask python=3.6.8
+
+
+2 - Activate it 
+ conda activate trialenv
+
+3 - install more libraries 
+conda install nameOfLib
+
+
+4 - deactivate env
+
+conda deactivate
+sometimes type above cmd 2 times

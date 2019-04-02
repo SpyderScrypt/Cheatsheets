@@ -1,0 +1,148 @@
+1 - npm i react-redux redux-devtools-extension redux-thunk
+
+2 - App.js
+import React, { Component } from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import store from "./src/store/reduxStore";
+import MainNav from "./src/components/Navigator/Navigator";
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <MainNav />
+      </Provider>
+    );
+  }
+}
+
+export default App;
+
+
+3 - store.js
+import { applyMiddleware, createStore } from "redux";
+import rootReducer from "../reducer/rootReducer";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+
+const middleware = [thunk];
+
+const store = createStore(
+  rootReducer,
+  {},
+  composeWithDevTools(applyMiddleware(...middleware))
+);
+
+export default store;
+
+
+4 - Root reducer
+
+import { combineReducers } from "redux";
+
+import question from "./reducer";
+
+const rootReducer = combineReducers({
+  question
+});
+
+export default rootReducer;
+
+
+5 - another reducer
+
+import { GET_QUESTIONS } from "../actions/showQuestion";
+
+const initialState = {
+    questions: []
+};
+
+export default function(state = initialState, action) {
+  const { type } = action;
+
+  switch (type) {
+    case GET_QUESTIONS:
+      return {
+        ...state,
+        questions: [
+          {
+            id:1,
+            question:"1+1",
+            imgBefore:"asdasd",
+            imgAfter:"qweqwe"
+          },
+          {
+            id:2,
+            question:"2+2",
+            imgBefore:"asdasd",
+            imgAfter:"qweqwe"
+          },
+          {
+            id:3,
+            question:"3+3",
+            imgBefore:"asdasd",
+            imgAfter:"qweqwe"
+          }
+        ]
+      };
+    default:
+      return state;
+  }
+}
+
+
+
+6 - action.js
+
+export const GET_QUESTIONS = "GET_QUESTIONS";
+
+export function getQuestions() {
+  return {
+    type: "GET_QUESTIONS"
+  };
+}
+
+
+
+7- using redux
+
+
+import React, { Component } from "react";
+import { Text, View, Button } from "react-native";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { getQuestions } from "../actions/showQuestion";
+
+class Questions extends Component {
+  render() {
+    let { getQuestions } = this.props;
+    return (
+      <View>
+        <Text> textInComponent </Text>
+        <Button
+          onPress={getQuestions}
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  question: state.question.questions
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getQuestions: getQuestions
+    },
+    dispatch
+  );
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Questions);

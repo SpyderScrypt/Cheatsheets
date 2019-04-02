@@ -393,3 +393,29 @@ No more Sdk version resolution issues in Android Studio after that.
 __________________________________________________________________________________
 
 
+React navigation header center align - 
+
+export default class HomeScreen extends Component {
+  static navigationOptions = {
+    title: "Maruti Hotel Management",
+    headerStyle: {
+      backgroundColor: "#f4511e"
+    },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      fontWeight: "bold",
+      flex: 1,
+      textAlign: "center",
+    }
+  };
+
+
+_________________________________________________________________________________________
+
+Gradient color package
+react-native-linear-gradient
+_________________________________________________________________________________
+Gradient color to header in navigation - 
+
+
+
