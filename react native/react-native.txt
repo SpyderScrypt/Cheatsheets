@@ -332,18 +332,21 @@ ________________________________________________________________
 
 
 Release Build
-1- goto documents 
- keytool -genkey -v -keystore watermeter.keystore -alias watermeter -keyalg RSA -keysi
-ze 2048 -validity 10000
-
+1- goto documents or any folder and create keystore file, note to remeber password which we enter
+ keytool -genkey -v -keystore watermeter.keystore -alias watermeter -keyalg RSA -keysize 2048 -validity 10000
+keep that keystore file as we will use same file to sign always
 2 - 
 release build
 cd android
-.\gradlew assembleRelease
+./gradlew assembleRelease  (In windows - .\gradlew assembleRelease )
 
-3 - copy unsigned app from
+3 - copy unsigned app from and put it in directory where we put keystore
 android-app-build-op-apk-release
 
+
+4 - now run in /home/akash/Android/Sdk/build-tools
+./zipalign -v 4 /home/akash/javascript/projects/Tiles Calculator/keystoreAndBuilds/app-release-unsigned.apk /home/akash/javascript/projects/Tiles Calculator/keystoreAndBuilds/TilesCalculator.apk
+(note that thereshould be no spaces in folder names)
 
 _________________________________________________________________
 Making image responsive inside view with respect to other components and to avoid cutting of other components
