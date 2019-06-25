@@ -23,3 +23,8 @@ eg commands-
 1)install mongodb driver 	-	npm install mongodb@2.2.5
 2)const MongoClient = require('mongodb').MongoClient;
 3)https://github.com/mongodb/node-mongodb-native	- use reference
+
+
+
+
+sudo service mongod start

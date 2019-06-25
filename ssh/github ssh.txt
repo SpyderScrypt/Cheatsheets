@@ -1,0 +1,29 @@
+1 - There is a folder in home called ssh which is hidden which has public and private keys
+
+cd .ssh
+
+2 - Create a new key there
+read doc to create more secure key
+ssh-keygen -C "salunkheakash0@gmail.com"
+enter file path and name eg - /home/akash/.ssh/id_rsa/name
+press enter enter
+
+3 - install xclip to copy contents of file in clipboard
+sudo apt install xclip
+then copy created 
+xclip id_rsa_github1.pub
+ then paste it in terminal and copy it
+xclip -o
+
+then paste it in github website -> settings -> ssh
+and create a new key and paste ssh we copied
+
+
+now in terminal press
+ssh-add -l 
+to see all the ssh keys added, if ssh we created is not in there, add it by
+ssh-add ~/path to ssh
+
+now git clone repo
+and check in github site if ssh key is green in color
+
